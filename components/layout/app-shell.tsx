@@ -43,7 +43,10 @@ export function AppShell({ children }: AppShellProps) {
 
           <aside
             className={cn(
-              "fixed inset-y-4 left-4 z-50 w-[min(var(--sidebar-width),calc(100vw-2rem))] transition-transform duration-200 lg:static lg:inset-auto lg:z-auto lg:w-[var(--sidebar-width)] lg:translate-x-0",
+              // Mobile: full-height fixed panel that slides in/out
+              "fixed inset-y-4 left-4 z-50 w-[min(var(--sidebar-width),calc(100vw-2rem))] transition-transform duration-200",
+              // Desktop: sticky — stays in view while the page scrolls beneath it
+              "lg:sticky lg:top-4 lg:inset-auto lg:z-auto lg:h-[calc(100vh-2rem)] lg:w-[var(--sidebar-width)] lg:translate-x-0 lg:self-start lg:flex-none",
               isSidebarOpen ? "translate-x-0" : "-translate-x-[110%]",
             )}
           >

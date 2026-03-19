@@ -30,11 +30,11 @@ export function SectionHeader({
             {eyebrow}
           </p>
         ) : null}
-        <h2 className="mt-2 break-words text-2xl font-semibold leading-tight tracking-[-0.04em] text-[var(--color-text)]">
+        <h2 className="section-title mt-2 break-words text-[var(--color-text)]">
           {title}
         </h2>
         {description ? (
-          <p className="mt-3 max-w-3xl break-words text-sm leading-7 text-[var(--color-text-soft)]">
+          <p className="mt-3 max-w-3xl break-words text-base leading-7 text-[var(--color-text-soft)]">
             {description}
           </p>
         ) : null}
