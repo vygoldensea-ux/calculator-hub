@@ -26,11 +26,9 @@ export function AuthControls() {
   }
 
   if (user === undefined) {
-    return (
-      <Badge className="hidden md:inline-flex" variant="neutral">
-        Checking session
-      </Badge>
-    );
+    // Auth still resolving. Render an invisible placeholder matching the
+    // button size so the header layout does not shift when the real button appears.
+    return <div aria-hidden="true" className="hidden h-10 w-20 md:block" />;
   }
 
   if (!user) {

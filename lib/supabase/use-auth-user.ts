@@ -1,44 +1,9 @@
 "use client";
 
-import type { User } from "@supabase/supabase-js";
-import { useEffect, useState } from "react";
+import { useAuthContext } from "@/lib/supabase/auth-context";
 
-import { createClient } from "@/lib/supabase/client";
-import { hasSupabaseEnv } from "@/lib/supabase/env";
-
+// Delegates to AuthUserProvider context so all callers share a single
+// Supabase client, one getSession() call, and one subscription.
 export function useAuthUser() {
-  const [supabase] = useState(() => (hasSupabaseEnv ? createClient() : null));
-  const [user, setUser] = useState<User | null | undefined>(
-    hasSupabaseEnv ? undefined : null,
-  );
-
-  useEffect(() => {
-    if (!supabase) {
-      return;
-    }
-
-    let isMounted = true;
-
-    supabase.auth.getSession().then(({ data }) => {
-      if (isMounted) {
-        setUser(data.session?.user ?? null);
-      }
-    });
-
-    const {
-      data: { subscription },
-    } = supabase.auth.onAuthStateChange((_event, session) => {
-      setUser(session?.user ?? null);
-    });
-
-    return () => {
-      isMounted = false;
-      subscription.unsubscribe();
-    };
-  }, [supabase]);
-
-  return {
-    supabase,
-    user,
-  };
+  return useAuthContext();
 }

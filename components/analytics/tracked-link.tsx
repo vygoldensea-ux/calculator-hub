@@ -15,7 +15,7 @@ export function TrackedLink({
   label,
   location,
   onClick,
-  scroll = false,
+  scroll = true,
   ...props
 }: TrackedLinkProps) {
   return (

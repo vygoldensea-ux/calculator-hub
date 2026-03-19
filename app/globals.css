@@ -115,6 +115,27 @@ textarea::placeholder {
   overflow-wrap: anywhere;
 }
 
+/* ─── Interaction feedback ──────────────────────────────────────────────────
+   Fast, subtle visual responses so every click feels alive immediately.
+   These supplement Tailwind active: classes without adding JS overhead.
+──────────────────────────────────────────────────────────────────────────── */
+
+/* Links and buttons get an immediate press response */
+a:active,
+button:active {
+  opacity: 0.88;
+}
+
+/* Interactive card lift — keep in sync with card.tsx */
+[data-interactive="true"]:active {
+  transform: translateY(0) !important;
+}
+
+/* Smooth scroll for the whole page */
+html {
+  scroll-behavior: smooth;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
