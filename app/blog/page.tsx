@@ -11,7 +11,7 @@ import { Card } from "@/components/ui/card";
 import { PageContainer } from "@/components/ui/page-container";
 import { SectionHeader } from "@/components/ui/section-header";
 import { getAllArticles, getFeaturedArticles } from "@/lib/content";
-import { buildBreadcrumbJsonLd, buildMetadata } from "@/lib/seo";
+import { buildBreadcrumbJsonLd, buildItemListJsonLd, buildMetadata } from "@/lib/seo";
 import { getPopularTools } from "@/lib/site";
 
 export const metadata: Metadata = buildMetadata({
@@ -37,6 +37,7 @@ export default function BlogPage() {
           { name: "Blog", path: "/blog" },
         ])}
       />
+      <JsonLd data={buildItemListJsonLd(allArticles, "/blog")} />
       <Card className="p-8 md:p-10">
         <Breadcrumbs
           items={[

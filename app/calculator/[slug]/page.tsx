@@ -5,7 +5,7 @@ import { CalculatorExperience } from "@/components/calculator/calculator-experie
 import { JsonLd } from "@/components/seo/json-ld";
 import { TOOL_MANIFEST } from "@/content/manifest";
 import { getArticlesByCalculatorSlug, getArticlesBySlugs } from "@/lib/content";
-import { buildBreadcrumbJsonLd, buildMetadata } from "@/lib/seo";
+import { buildBreadcrumbJsonLd, buildFaqJsonLd, buildMetadata, buildToolJsonLd } from "@/lib/seo";
 import { getCategoryBySlug, getToolBySlug } from "@/lib/site";
 
 type ToolPageProps = {
@@ -67,8 +67,12 @@ export default async function ToolPage({ params }: ToolPageProps) {
           { name: "Home", path: "/" },
           { name: `${category.title} calculators`, path: `/category/${category.slug}` },
           { name: tool.title, path: `/calculator/${tool.slug}` },
-          ])}
+        ])}
       />
+      <JsonLd data={buildToolJsonLd(tool, category)} />
+      {tool.faqItems.length > 0 ? (
+        <JsonLd data={buildFaqJsonLd(tool.faqItems)} />
+      ) : null}
       <CalculatorExperience
         category={category}
         relatedArticles={relatedArticles}

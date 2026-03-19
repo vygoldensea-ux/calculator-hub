@@ -12,7 +12,7 @@ import { PageContainer } from "@/components/ui/page-container";
 import { SectionHeader } from "@/components/ui/section-header";
 import { CATEGORY_MANIFEST } from "@/content/manifest";
 import { getArticlesByCategory } from "@/lib/content";
-import { buildBreadcrumbJsonLd, buildMetadata } from "@/lib/seo";
+import { buildBreadcrumbJsonLd, buildCollectionJsonLd, buildMetadata } from "@/lib/seo";
 import { getCategoryBySlug, getToolBySlug, getToolsByCategory } from "@/lib/site";
 import type { ToolManifestItem } from "@/types/site";
 
@@ -70,6 +70,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
           { name: `${category.title} calculators`, path: `/category/${category.slug}` },
         ])}
       />
+      <JsonLd data={buildCollectionJsonLd(category, tools)} />
       <Card className="p-8 md:p-10">
         <Breadcrumbs
           items={[
