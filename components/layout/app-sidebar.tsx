@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 
+import { LogoMark } from "@/components/branding/logo-mark";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { categoryNav, primaryNav, siteConfig, toolNav } from "@/lib/site";
@@ -145,8 +146,8 @@ export function AppSidebar({
           scroll={false}
           className="flex min-w-0 items-start gap-3 rounded-[var(--radius-lg)] bg-[linear-gradient(135deg,_rgba(37,99,235,0.12),_rgba(255,255,255,0.92))] p-3"
         >
-          <div className="grid h-11 w-11 place-items-center rounded-[1.25rem] bg-[var(--color-text)] text-base font-semibold tracking-[-0.04em] text-white">
-            C
+          <div className="grid h-11 w-11 shrink-0 place-items-center rounded-[1.25rem] bg-white shadow-[inset_0_0_0_1px_rgba(15,23,42,0.06)]">
+            <LogoMark className="h-8 w-8" />
           </div>
           <div className="min-w-0 space-y-1">
             <p className="truncate text-base font-semibold tracking-[-0.03em] text-[var(--color-text)]">

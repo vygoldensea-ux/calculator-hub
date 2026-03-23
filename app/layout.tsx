@@ -17,6 +17,9 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   applicationName: siteConfig.name,
+  icons: {
+    icon: "/icon.svg",
+  },
   metadataBase: new URL(getSiteUrl()),
   keywords: [
     "calculator hub",

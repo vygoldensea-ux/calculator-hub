@@ -2,10 +2,11 @@ import Script from "next/script";
 import { Suspense } from "react";
 
 import { AnalyticsRouteEvents } from "@/components/analytics/analytics-route-events";
-import { GA_MEASUREMENT_ID } from "@/lib/analytics/ga";
 
 export function GoogleAnalytics() {
-  if (!GA_MEASUREMENT_ID) {
+  const measurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID ?? "";
+
+  if (!measurementId) {
     return null;
   }
 
@@ -13,7 +14,7 @@ export function GoogleAnalytics() {
     <>
       <Script
         async
-        src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+        src={`https://www.googletagmanager.com/gtag/js?id=${measurementId}`}
         strategy="afterInteractive"
       />
       <script
@@ -23,7 +24,7 @@ export function GoogleAnalytics() {
             "function gtag(){window.dataLayer.push(arguments);}",
             "window.gtag = gtag;",
             "gtag('js', new Date());",
-            `gtag('config', '${GA_MEASUREMENT_ID}', { send_page_view: false });`,
+            `gtag('config', '${measurementId}', { send_page_view: false });`,
           ].join(""),
         }}
         id="ga4-init"

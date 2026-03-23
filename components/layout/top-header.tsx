@@ -4,9 +4,11 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 import { AuthControls } from "@/components/auth/auth-controls";
+import { LogoMark } from "@/components/branding/logo-mark";
 import { Badge } from "@/components/ui/badge";
 import { Button, buttonStyles } from "@/components/ui/button";
 import { InputShell } from "@/components/ui/input-shell";
+import { siteConfig } from "@/lib/site";
 import { useAuthUser } from "@/lib/supabase/use-auth-user";
 import { cn } from "@/lib/utils";
 
@@ -44,6 +46,15 @@ export function TopHeader({ onOpenSidebar }: TopHeaderProps) {
             />
           </svg>
         </Button>
+
+        <Link
+          aria-label={`${siteConfig.name} home`}
+          className="shrink-0 rounded-[var(--radius-md)] border border-white/70 bg-[var(--color-surface)]/92 p-2 shadow-[var(--shadow-soft)] transition-transform duration-150 ease-out hover:-translate-y-0.5 motion-reduce:transition-none"
+          href="/"
+          scroll={false}
+        >
+          <LogoMark className="h-6 w-6" />
+        </Link>
 
         <div className="order-3 min-w-0 basis-full sm:order-none sm:basis-auto sm:flex-1">
           <InputShell
