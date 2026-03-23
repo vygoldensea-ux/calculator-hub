@@ -24,7 +24,7 @@ export function GoogleAnalytics() {
             "function gtag(){window.dataLayer.push(arguments);}",
             "window.gtag = gtag;",
             "gtag('js', new Date());",
-            `gtag('config', '${measurementId}', { send_page_view: false });`,
+            `gtag('config', '${measurementId}');`,
           ].join(""),
         }}
         id="ga4-init"
