@@ -74,7 +74,32 @@ export function AppShell({ children }: AppShellProps) {
 
         <div className="min-w-0 flex-1">
           <TopHeader onOpenSidebar={() => setSidebarRoute(pathname)} />
-          <main className="min-h-[calc(100vh-7rem)] min-w-0 pb-10">{children}</main>
+          <main className="min-h-[calc(100vh-7rem)] min-w-0">{children}</main>
+          <footer className="pb-10 pt-4">
+            <Card className="px-4 py-3">
+              <div className="flex flex-wrap items-center justify-between gap-2 text-sm leading-6 text-[var(--color-text-soft)]">
+                <p>
+                  Backed by{" "}
+                  <a
+                    className="font-semibold text-[var(--color-text)] transition-colors duration-150 hover:text-[var(--color-brand-strong)]"
+                    href="https://goldenseastudios.com"
+                    rel="noreferrer"
+                    target="_blank"
+                  >
+                    Goldensea Studios
+                  </a>
+                </p>
+                <a
+                  className="font-medium text-[var(--color-text-soft)] transition-colors duration-150 hover:text-[var(--color-text)]"
+                  href="https://x.com/jadetruong3107"
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  X @jadetruong3107
+                </a>
+              </div>
+            </Card>
+          </footer>
         </div>
 
         <RightRail />
