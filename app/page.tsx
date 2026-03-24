@@ -52,7 +52,7 @@ export default function HomePage() {
           <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(37,99,235,0.14),_transparent_40%),linear-gradient(135deg,_rgba(255,255,255,0.85),_rgba(245,247,251,0.95))]" />
           <div className="relative space-y-8">
             <div className="space-y-4">
-              <Badge>Production-minded foundation</Badge>
+              <Badge>Trusted calculator hub</Badge>
               <h1 className="max-w-3xl font-[family-name:var(--font-display)] text-[var(--text-3xl)] leading-[1.05] tracking-[-0.04em] text-[var(--color-text)]">
                 Use one clear hub for health, finance, date, grade, discount,
                 and percentage calculators.
@@ -128,8 +128,8 @@ export default function HomePage() {
       <section className="space-y-4">
         <SectionHeader
           eyebrow="Core categories"
-          title="Three calculator lanes, one shared shell"
-          description="Start with the category that matches your question, then branch into the tools and guides that support it."
+          title="Three calculator categories for common planning questions"
+          description="Start with the category that matches your question, then move into the calculators and guides that support it."
         />
         <div className="grid gap-4 lg:grid-cols-3">
           {CATEGORY_MANIFEST.map((category) => (

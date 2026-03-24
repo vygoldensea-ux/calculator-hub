@@ -16,9 +16,9 @@ import { getPopularTools } from "@/lib/site";
 
 export const metadata: Metadata = buildMetadata({
   description:
-    "Browse calculator guides that explain BMI, calories, mortgages, investing, grades, dates, discounts, and percentage math in plain language.",
+    "Read calculator guides for BMI, calorie needs, mortgages, loans, age math, percentages, grades, dates, and discounts in plain language.",
   path: "/blog",
-  title: "Calculator Guides and Planning Articles",
+  title: "Calculator Guides for Health, Finance, and Everyday Math",
 });
 
 export default function BlogPage() {
@@ -81,8 +81,8 @@ export default function BlogPage() {
       <section className="space-y-4">
         <SectionHeader
           eyebrow="Latest articles"
-          title="Starter SEO content for the first calculator batch"
-          description="Start with the article that best matches your question, then use the related calculator when you want to run the numbers."
+          title="Guides that answer the questions behind the numbers"
+          description="Start with the article that matches your question, then move into the related calculator when you are ready to run the numbers."
         />
         {allArticles.length > 0 ? (
           <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">

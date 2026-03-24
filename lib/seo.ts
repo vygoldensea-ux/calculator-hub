@@ -27,7 +27,7 @@ export function getSiteUrl() {
   return (
     process.env.NODE_ENV === "development"
       ? "http://127.0.0.1:3003"
-      : "https://claritycalculatorhub.com"
+      : "https://www.kitpilots.com"
   ).replace(/\/$/, "");
 }
 

@@ -266,8 +266,9 @@ export function CalculatorExperience({
               <div className="mt-6 flex flex-col gap-3 border-t border-[var(--color-border)] pt-5 md:flex-row md:items-center md:justify-between">
                 <div className="min-h-[5.5rem] space-y-2">
                   <p className="text-sm leading-6 text-[var(--color-text-muted)]">
-                    Results update instantly as you type. Use calculate to log
-                    recent history and save to keep a copy on your account.
+                    Results update as you type. Use Calculate if you want the
+                    result added to recent history, or Save if you want to keep
+                    this scenario on your account.
                   </p>
                   {actionMessage ? (
                     <p className="text-sm leading-6 text-[var(--color-brand-strong)]">
@@ -316,11 +317,36 @@ export function CalculatorExperience({
             </form>
           </Card>
 
+          {definition.howToSteps?.length ? (
+            <Card className="p-6">
+              <SectionHeader
+                eyebrow="How to use"
+                title="Enter your numbers in a few clear steps"
+                description="Use these quick steps to get a reliable result the first time, then review the worked example and explanation below if you want more context."
+              />
+              <div className="mt-6 grid gap-4 md:grid-cols-2">
+                {definition.howToSteps.map((step, index) => (
+                  <div
+                    key={step}
+                    className="rounded-[var(--radius-lg)] border border-[var(--color-border)] bg-[var(--color-surface-muted)] p-5"
+                  >
+                    <p className="text-[var(--text-xs)] font-semibold uppercase tracking-[0.2em] text-[var(--color-text-muted)]">
+                      Step {index + 1}
+                    </p>
+                    <p className="mt-3 text-sm leading-7 text-[var(--color-text-soft)]">
+                      {step}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </Card>
+          ) : null}
+
           <Card className="p-6">
             <SectionHeader
-              eyebrow="Explanation"
-              title="How to use this calculator"
-              description="The shared calculator template keeps the layout consistent while each tool carries its own formula notes and interpretation guidance."
+              eyebrow="Formula and logic"
+              title="Understand how the result is calculated"
+              description="These notes explain the formula or interpretation behind the result so you can use the calculator with more confidence."
             />
             <div className="mt-6 grid gap-4 md:grid-cols-2">
               {definition.explanation.map((section) => (
@@ -372,9 +398,9 @@ export function CalculatorExperience({
 
       <section className="space-y-4">
         <SectionHeader
-          eyebrow="Examples"
-          title="Quick scenarios"
-          description="These examples mirror the working calculator so the page feels helpful even before you type anything."
+          eyebrow="Worked examples"
+          title="See how the numbers play out"
+          description="These examples mirror real calculator use cases so you can sanity-check the logic before entering your own numbers."
         />
         <div className="grid gap-4 md:grid-cols-2">
           {definition.examples.map((example) => (
@@ -416,12 +442,12 @@ export function CalculatorExperience({
       </section>
 
       {relatedArticles.length > 0 ? (
-        <section className="space-y-4">
-          <SectionHeader
-            eyebrow="Related articles"
-            title="Read next"
-            description="These guides answer the natural follow-up questions around this calculator without forcing generic links into the layout."
-          />
+      <section className="space-y-4">
+        <SectionHeader
+          eyebrow="Related articles"
+          title="Read next"
+          description="These guides cover the follow-up questions people often have after running the calculator."
+        />
           <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
             {relatedArticles.map((article) => (
               <ArticleCard key={article.slug} article={article} compact />
@@ -435,7 +461,7 @@ export function CalculatorExperience({
           <SectionHeader
             eyebrow="Related calculators"
             title="Keep exploring"
-            description="These routes share the same shell and can expand from the same manifest-driven architecture."
+            description="If this result sends you to the next question, these related calculators are the natural places to continue."
           />
           <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
             {relatedTools.map((relatedTool) => (

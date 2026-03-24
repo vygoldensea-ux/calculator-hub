@@ -27,6 +27,8 @@ export type BlogArticle = {
   relatedCalculators: ImplementedCalculatorSlug[];
   resource?: ArticleResourceCard;
   slug: string;
+  seoDescription: string;
+  seoTitle: string;
   title: string;
 };
 

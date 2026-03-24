@@ -15,48 +15,59 @@ export const calculatorPageContent: Record<
     examples: [
       {
         result:
-          "A moderately active 30-year-old woman at 165 cm and 60 kg lands near 2,000 maintenance calories per day.",
-        title: "Typical maintenance estimate",
+          "A 30-year-old woman who is 165 cm tall, weighs 60 kg, and is moderately active lands around 2,040 maintenance calories per day, with a mild cut target near 1,790 and a mild bulk target near 2,290.",
+        title: "Maintenance calories for a common daily planning scenario",
         values:
-          "Sex: female, Age: 30, Height: 165 cm, Weight: 60 kg, Activity: moderate",
+          "Sex: female, Age: 30, Height: 165 cm, Weight: 60 kg, Activity: moderately active",
       },
       {
         result:
-          "The calculator also shows a small cut and small bulk target for straightforward planning.",
-        title: "Simple target adjustment",
+          "A 38-year-old man at 180 cm and 82 kg with light activity lands closer to 2,400 maintenance calories, which is useful when building a first meal plan or checking whether progress has stalled.",
+        title: "A second scenario for comparison",
         values:
-          "Maintenance calories plus or minus a small 250 calorie adjustment.",
+          "Sex: male, Age: 38, Height: 180 cm, Weight: 82 kg, Activity: lightly active",
       },
     ],
     faqs: [
       {
         answer:
-          "This calculator uses the Mifflin-St Jeor BMR formula, then multiplies that baseline by your selected activity level to estimate maintenance calories.",
-        question: "How are maintenance calories estimated?",
+          "This calculator estimates basal metabolic rate with the Mifflin-St Jeor equation, then applies your selected activity level to estimate maintenance calories. It is a strong starting point for everyday planning, even though it is not perfectly individualized.",
+        question: "How does this calorie calculator estimate maintenance calories?",
       },
       {
         answer:
-          "No. The cut and bulk targets are simple planning guides. They are intentionally small and not a replacement for medical or coaching advice.",
-        question: "Are the cut and bulk targets personalized?",
+          "Choose the option that matches your average week, not your hardest workout day. If your routine changes a lot from week to week, pick the closest overall pattern and adjust from real progress after a couple of weeks.",
+        question: "What activity level should I choose?",
       },
       {
         answer:
-          "Use the activity option that best matches your average weekly routine. It does not need to be perfect for the calculator to be useful.",
-        question: "How should I choose activity level?",
+          "They are simple planning guides built around a small adjustment from maintenance. They can help you sense-check the next step, but they are not a substitute for clinical or coaching advice.",
+        question: "Are the cut and bulk targets personalized recommendations?",
       },
+    ],
+    howToSteps: [
+      "Choose the sex, age, height, weight, and activity level that best match your current situation.",
+      "Use average weekly activity rather than your single hardest workout day so the maintenance estimate stays realistic.",
+      "Read the maintenance calories first, then use the mild cut or bulk targets only as a starting range to test in real life.",
+      "Review the result again after a few weeks of weight trend data instead of assuming one estimate is perfect forever.",
     ],
     explanation: [
       {
-        body: "The Mifflin-St Jeor equation estimates basal metabolic rate from sex, age, height, and weight. That baseline is then multiplied by an activity factor to estimate maintenance calories.",
-        title: "Formula used",
+        body: "The calculator uses the Mifflin-St Jeor equation to estimate basal metabolic rate from sex, age, height, and weight. It then multiplies that baseline by an activity factor to estimate how many calories would roughly maintain your current weight.",
+        title: "The formula behind the estimate",
       },
       {
-        body: "The result includes a mild cut and bulk target so people can quickly turn maintenance into a simple next step without loading extra complexity into the calculator.",
-        title: "What the targets mean",
+        body: "The mild cut and bulk targets are intentionally small. They help turn maintenance into a practical next action without pretending that one calculator result can replace ongoing adjustment from body weight, training, and appetite signals.",
+        title: "How to interpret the target ranges",
       },
     ],
     intro:
-      "Estimate daily maintenance calories with the Mifflin-St Jeor formula and get simple cut or bulk targets for lightweight planning.",
+      "Use this calorie calculator to estimate daily maintenance calories with the Mifflin-St Jeor formula, then compare simple cut or bulk targets without opening a separate tool. It is useful for people who want a clear starting number before planning meals, adjusting body weight, or checking whether their current intake still matches their activity level. The result is meant to give you a practical baseline, not false precision. Once you have the estimate, you can use the built-in targets as a lightweight planning range and refine them from your real-world progress.",
+    relatedArticleSlugs: [
+      "how-activity-level-affects-calorie-needs",
+      "calorie-deficit-explained",
+      "understanding-bmi-and-healthy-ranges",
+    ],
     relatedSlugs: [
       "bmi-calculator",
       "age-calculator",
@@ -134,45 +145,56 @@ export const calculatorPageContent: Record<
     },
     examples: [
       {
-        result: "15% of 240 is 36.",
-        title: "Find a percentage of a value",
+        result: "15% of 240 is 36, so a 15% allocation from a budget of 240 leaves 36 for that line item.",
+        title: "Find a percentage of a number",
         values: "Percent: 15, Value: 240",
       },
       {
-        result: "80 increased by 12% becomes 89.6.",
-        title: "Apply an increase",
-        values: "Starting value: 80, Adjustment: 12%, Direction: increase",
+        result: "If 36 is part of 240, then 36 is 15% of 240. If 80 increases by 12%, the new value becomes 89.6.",
+        title: "Switch between percentage questions without changing pages",
+        values: "Part: 36, Whole: 240, or Base: 80 with a 12% increase",
       },
     ],
     faqs: [
       {
         answer:
-          "Use the X% of Y mode when you already know the percentage and the base value. Use the what percent mode when you know the part and the whole.",
+          "Use X% of Y when you already know the percentage and the base value. Use X is what % of Y when you know the smaller number and the total. Use the adjustment mode when you want to apply an increase or decrease to a starting value.",
         question: "Which percentage mode should I use?",
       },
       {
         answer:
-          "No. Percentage change compares an old value and a new value. The percentage calculator is for part-to-whole questions and applying a percent to a base value.",
+          "No. This page handles common percentage relationships, while percent change compares an old value and a new value. If your question is about how much something moved over time, use the percent change calculator instead.",
         question: "Is this the same as percent change?",
       },
       {
         answer:
-          "If the whole value is 0, the what percent calculation is undefined, so the calculator will ask you for a non-zero whole.",
-        question: "Why can’t the whole be 0?",
+          "The whole value is the denominator in the what percent formula. If it is 0, the ratio is undefined, so the calculator needs a non-zero whole to give a valid answer.",
+        question: "Why can’t the whole value be 0?",
       },
+    ],
+    howToSteps: [
+      "Pick the mode that matches your question: percent of a number, what percent one number is of another, or increase or decrease by a percent.",
+      "Enter only the values used in that mode and leave the other fields alone.",
+      "Read the primary result first, then use the summary text to confirm you asked the right percentage question.",
+      "If your goal is to compare an old value with a new value, jump to the percent change calculator instead of forcing it into this tool.",
     ],
     explanation: [
       {
-        body: "Percent-of mode multiplies the percent by the base value. What-percent mode divides the part by the whole and converts that ratio into a percentage.",
-        title: "How the math works",
+        body: "In percent-of mode, the calculator multiplies the percentage by the base value. In what-percent mode, it divides the part by the whole and converts that ratio into a percentage.",
+        title: "Core percentage formulas",
       },
       {
-        body: "The increase or decrease mode applies a percentage adjustment to the starting value, which makes it useful for quick pricing, budgeting, or target-setting scenarios.",
-        title: "When to use the adjustment mode",
+        body: "The increase or decrease mode applies a percentage adjustment to a starting value, which makes it useful for budgeting, pricing, markup checks, and quick planning without switching between multiple tools.",
+        title: "When the adjustment mode is most useful",
       },
     ],
     intro:
-      "Solve the most common percentage questions in one place: percent of a value, what percent one number is of another, and a simple percentage increase or decrease.",
+      "Use this percentage calculator when you need a quick answer to one of the most common math questions: what is X percent of Y, what percent one number is of another, or what happens when you increase or decrease a value by a percentage. It is useful for everyday pricing, budgeting, grades, and planning because it keeps the three most common percentage tasks on one page. The goal is not to overwhelm you with formulas. It is to help you choose the right percentage question, enter the right values, and trust the result.",
+    relatedArticleSlugs: [
+      "percent-of-a-number-explained",
+      "percentage-vs-percent-change-explained",
+      "discount-math-for-sales-and-markdowns",
+    ],
     relatedSlugs: [
       "percent-change-calculator",
       "discount-calculator",
@@ -429,45 +451,55 @@ export const calculatorPageContent: Record<
     },
     examples: [
       {
-        result: "The calculator shows full years, months, days, and total days lived as of the selected comparison date.",
-        title: "Calculate age today",
+        result: "From 1995-06-14 to today, the calculator shows a calendar-style age in full years, months, and days, plus total days lived for a more precise reference.",
+        title: "Check age as of today",
         values: "Birth date: 1995-06-14, End date: today",
       },
       {
-        result: "You can compare a birth date to any custom date to answer forms, deadlines, or age-on-date questions.",
-        title: "Calculate age on a specific date",
+        result: "If someone born on 1995-06-14 needs age on 2028-01-01, the tool compares the two dates directly instead of estimating with rough averages.",
+        title: "Check age on a custom date",
         values: "Birth date: 1995-06-14, End date: 2028-01-01",
       },
     ],
     faqs: [
       {
         answer:
-          "This calculator uses calendar dates rather than rough averages, so the years, months, and days reflect how people typically describe age.",
-        question: "How does the calculator define age?",
+          "The calculator compares the birth date with today or your chosen end date using calendar dates, then reports the result the way people normally state age: full years, remaining months, and remaining days.",
+        question: "How does the age calculator work?",
       },
       {
         answer:
-          "Yes. Switch to the custom date mode if you need age on a future or past date instead of today.",
-        question: "Can I calculate age on a different date?",
+          "Yes. Switch to custom date mode if you need to know age on a future or past date for forms, planning, or eligibility checks.",
+        question: "Can I calculate age on a different date instead of today?",
       },
       {
         answer:
-          "No. This tool works only with dates, not times of day, which keeps the results easy to understand and maintain.",
-        question: "Does time of day matter here?",
+          "No. This version uses dates only, not time of day. That keeps the result easier to understand and matches most everyday use cases for age checks.",
+        question: "Does the time of day change the result?",
       },
+    ],
+    howToSteps: [
+      "Enter the birth date first, then choose whether you want age today or age on a custom end date.",
+      "If you need age on a deadline, future birthday, or form date, switch to custom mode and enter that exact comparison date.",
+      "Read the years, months, and days first, then use the total days only when you need a more precise span.",
+      "If your question is about the distance between any two dates rather than a birth date, use the date difference calculator instead.",
     ],
     explanation: [
       {
-        body: "Age is calculated by comparing the birth date to today or to a selected end date, then borrowing months and days the same way a calendar-based age check does.",
-        title: "Calendar-based result",
+        body: "The calculator compares the birth date with the end date and borrows months and days the same way a calendar-based age check works. That is why the result feels natural to read instead of looking like a rough average.",
+        title: "How age is calculated between dates",
       },
       {
-        body: "The result includes total days alongside years, months, and days, which is helpful when you need both a human-friendly age and a precise span.",
-        title: "Why the breakdown is useful",
+        body: "The total days figure is helpful when you need a precise time span, while the years-months-days breakdown is more useful for forms, planning, and everyday conversation.",
+        title: "Why the breakdown includes two views",
       },
     ],
     intro:
-      "Find age from a birth date to today or to any selected comparison date with a result that reads like a normal calendar age.",
+      "Use this age calculator to find exact age from a birth date to today or to any custom comparison date. It is useful for forms, planning milestones, checking eligibility dates, or answering everyday questions like how old someone will be on a future birthday. Instead of giving you only a raw day count, the result reads like a normal calendar age in years, months, and days, with total days included as an extra reference. That makes it easier to use whether you need a quick answer or a more precise span.",
+    relatedArticleSlugs: [
+      "exact-age-and-date-difference-planning",
+      "age-in-years-months-and-days-explained",
+    ],
     relatedSlugs: [
       "date-difference-calculator",
       "bmi-calculator",
@@ -594,45 +626,56 @@ export const calculatorPageContent: Record<
     },
     examples: [
       {
-        result: "170 cm and 68 kg gives a BMI around 23.5, which falls in the normal range.",
-        title: "Metric example",
+        result: "A height of 170 cm and weight of 68 kg produces a BMI around 23.5, which falls in the normal range under standard BMI categories.",
+        title: "Worked BMI example in metric units",
         values: "Mode: metric, Height: 170 cm, Weight: 68 kg",
       },
       {
-        result: "68 inches and 160 lb gives a BMI around 24.3, also in the normal range.",
-        title: "Imperial example",
+        result: "A height of 68 inches and weight of 160 pounds produces a BMI around 24.3, which is also in the normal range using the imperial formula.",
+        title: "Worked BMI example in imperial units",
         values: "Mode: imperial, Height: 68 in, Weight: 160 lb",
       },
     ],
     faqs: [
       {
         answer:
-          "BMI is a quick height-to-weight screening ratio. It is useful for broad context but it is not a diagnosis.",
-        question: "What does BMI tell me?",
+          "BMI compares weight with height to create a quick screening ratio. It is useful for broad context and trend checking, but it does not directly measure body fat, muscle mass, or health status on its own.",
+        question: "What does BMI actually tell me?",
       },
       {
         answer:
-          "The calculator supports metric and imperial input so you can work in the units that feel most natural.",
-        question: "Can I switch unit systems?",
+          "Yes. You can switch between metric and imperial input without changing pages, so the calculator works whether you think in kilograms and centimeters or pounds and inches.",
+        question: "Can I use metric and imperial units?",
       },
       {
         answer:
-          "BMI categories are common screening ranges. For medical advice or edge cases, a clinician is the right source.",
-        question: "Should I treat the category as medical advice?",
+          "No. BMI categories are common screening ranges, not a diagnosis. They are helpful as a starting point, especially when you want to pair BMI with other information like calorie intake, waist measurements, or advice from a clinician.",
+        question: "Should I treat the BMI category as medical advice?",
       },
+    ],
+    howToSteps: [
+      "Choose metric or imperial mode first so the height and weight fields match the units you already know.",
+      "Enter your current height and weight as accurately as you can, then review the BMI result and category together.",
+      "Treat the category as a quick checkpoint, not a final judgment, especially if you have a muscular build or other reasons BMI may be less informative.",
+      "Use the related calorie calculator if you want to turn the BMI context into a practical nutrition baseline.",
     ],
     explanation: [
       {
-        body: "BMI is calculated from weight divided by height squared. Metric mode uses kilograms and centimeters, while imperial mode uses pounds and inches with the standard 703 conversion factor.",
-        title: "Formula",
+        body: "BMI is calculated as weight divided by height squared. In metric mode, that means kilograms divided by meters squared. In imperial mode, the calculator uses pounds and inches with the standard 703 conversion factor.",
+        title: "BMI formula in plain language",
       },
       {
-        body: "The category labels make the result easier to scan, but they are best used as a quick reference rather than a final health judgment.",
+        body: "The BMI category labels help you read the number quickly, but the number is most useful as a screening tool and trend checkpoint. It works best when combined with other context instead of treated as a final health verdict.",
         title: "How to interpret the result",
       },
     ],
     intro:
-      "Estimate body mass index in either metric or imperial units and get the standard BMI category instantly.",
+      "Use this BMI calculator to check body mass index quickly in either metric or imperial units. It is useful when you want a fast screening number based on height and weight, whether you are tracking health goals, checking where you fall in standard BMI ranges, or pairing BMI with calorie planning. The calculator gives you both the BMI value and the category so the result is easy to read at a glance. It is designed to be quick and practical, while still making it clear that BMI is a starting point rather than a diagnosis.",
+    relatedArticleSlugs: [
+      "understanding-bmi-and-healthy-ranges",
+      "bmi-vs-body-fat-explained",
+      "how-activity-level-affects-calorie-needs",
+    ],
     relatedSlugs: [
       "age-calculator",
       "calorie-calculator",
@@ -702,46 +745,57 @@ export const calculatorPageContent: Record<
     examples: [
       {
         result:
-          "A 300,000 mortgage at 6.5% over 30 years produces a monthly payment just under 1,900 before taxes and insurance.",
-        title: "Long-term home loan",
+          "A 300,000 mortgage at 6.5% over 30 years produces a monthly payment just under 1,900 before taxes, insurance, and other housing costs, while total interest over the full term is substantial enough to change how you compare offers.",
+        title: "A common home-buying scenario",
         values: "Loan amount: 300000, Rate: 6.5%, Term: 30 years",
       },
       {
         result:
-          "The result also breaks out total payment and total interest over the full term.",
-        title: "Full borrowing cost",
-        values: "Monthly payment plus total paid over the life of the loan",
+          "Shortening the term or lowering the rate usually raises or lowers the monthly payment right away, but the bigger story is often how much total interest changes over the life of the mortgage.",
+        title: "Why total cost matters, not just the monthly payment",
+        values: "Compare the same principal across different rates or loan terms",
       },
     ],
     faqs: [
       {
         answer:
-          "This version keeps the mortgage focused on principal, rate, and term. Taxes, insurance, HOA fees, and PMI are not included.",
-        question: "What is not included here?",
+          "This calculator focuses on principal, rate, and term. It does not include property tax, homeowner’s insurance, HOA fees, PMI, or other housing costs that may matter in a full monthly budget.",
+        question: "What is not included in this mortgage calculator?",
       },
       {
         answer:
-          "Yes. If the annual rate is 0, the calculator falls back to a simple principal divided by the number of monthly payments.",
-        question: "Does it handle a 0% rate?",
+          "Yes. If the annual interest rate is 0, the calculator falls back to principal divided by the total number of monthly payments, which gives a simple no-interest payment estimate.",
+        question: "Does the calculator handle a 0% interest rate?",
       },
       {
         answer:
-          "Mortgage and loan calculators use the same math here, but the labels stay different so the page matches the user’s intent.",
+          "The math is the same, but this page is framed for home loans and longer repayment horizons. The loan calculator uses more general borrowing language for personal, auto, or other installment loans.",
         question: "How is this different from the loan calculator?",
       },
     ],
+    howToSteps: [
+      "Enter the loan amount, annual interest rate, and mortgage term in years.",
+      "Check the monthly payment first, then compare the total payment and total interest to understand the full borrowing cost.",
+      "Use the result as a first-pass planning number before adding taxes, insurance, or other housing costs that are outside this tool.",
+      "Test more than one rate or term if you are comparing offers, because small rate changes can create large total-interest differences over time.",
+    ],
     explanation: [
       {
-        body: "Monthly payment is calculated with the standard amortizing loan formula using the loan amount, monthly rate, and total number of monthly payments.",
-        title: "Formula",
+        body: "The calculator uses the standard amortizing loan formula. It converts the annual interest rate to a monthly rate, spreads the mortgage across the total number of monthly payments, and calculates the fixed monthly amount needed to repay the balance over the full term.",
+        title: "How the monthly payment is calculated",
       },
       {
-        body: "Because the calculator also shows total payment and total interest, it works well for comparing rates or terms without adding a full amortization schedule yet.",
-        title: "Why the breakdown matters",
+        body: "Monthly payment is only part of the picture. Total payment and total interest help you compare two mortgage options that may look similar month to month but carry very different long-term costs.",
+        title: "Why the full cost breakdown matters",
       },
     ],
     intro:
-      "Estimate mortgage monthly payment, total paid, and total interest with a clean, no-frills loan summary.",
+      "Use this mortgage calculator to estimate monthly payment, total repayment, and total interest before you move into a full home-buying budget. It is built for the questions people ask first: how much the payment might be, how rate changes affect the number, and how much interest a longer mortgage can add over time. The page keeps the inputs simple on purpose so you can compare scenarios quickly, then decide whether a deeper breakdown is worth exploring. That makes it useful for first-time buyers, refinance comparisons, and early affordability planning.",
+    relatedArticleSlugs: [
+      "mortgage-vs-loan-payment-basics",
+      "how-interest-rate-changes-monthly-payment",
+      "compound-interest-basics-for-long-term-growth",
+    ],
     relatedSlugs: [
       "loan-calculator",
       "compound-interest-calculator",
@@ -793,46 +847,57 @@ export const calculatorPageContent: Record<
     examples: [
       {
         result:
-          "A 20,000 loan at 8% over 5 years gives a monthly payment a little above 400.",
-        title: "Personal loan example",
+          "A 20,000 loan at 8% over 5 years creates a monthly payment a little above 400, which is the kind of check people often need before comparing lenders or deciding how much to borrow.",
+        title: "A realistic fixed-rate loan example",
         values: "Loan amount: 20000, Rate: 8%, Term: 5 years",
       },
       {
         result:
-          "The calculator keeps the wording generic so it works for auto, personal, or other installment loans.",
-        title: "Generic installment borrowing",
-        values: "Principal, rate, and term only",
+          "Two loans can have similar monthly payments but very different total interest. That is why this calculator shows the lifetime borrowing cost alongside the monthly figure.",
+        title: "Compare borrowing cost, not only payment size",
+        values: "Review monthly payment, total payment, and total interest together",
       },
     ],
     faqs: [
       {
         answer:
-          "This tool is for generic installment loans. It does not include fees, prepayment, or irregular payment schedules.",
-        question: "What kind of loans does this work for?",
+          "It is built for fixed-rate installment loans such as personal loans, auto loans, and other borrowing with one steady monthly payment over a set term. It does not model fees, prepayment, or changing rates.",
+        question: "What kind of loans does this calculator work for?",
       },
       {
         answer:
-          "The total interest figure helps you compare terms that may have similar monthly payments but very different lifetime costs.",
-        question: "Why does total interest matter?",
+          "Monthly payment tells you the near-term budget impact, but total interest shows the real cost of borrowing. That is often the number that reveals whether a longer term is actually worth it.",
+        question: "Why does total interest matter so much?",
       },
       {
         answer:
-          "Yes. The calculator assumes one fixed monthly payment over the full term.",
-        question: "Does this assume monthly payments?",
+          "Yes. This version assumes fixed monthly payments over the full term. If a loan has variable rates or irregular payments, the actual schedule can differ from this estimate.",
+        question: "Does this assume equal monthly payments?",
       },
+    ],
+    howToSteps: [
+      "Enter the amount you plan to borrow, the annual interest rate, and the repayment term in years.",
+      "Check the monthly payment for budget fit, then read the total payment and total interest before deciding whether the term still looks attractive.",
+      "Compare more than one rate or term if you are shopping lenders, because a lower monthly number can hide a higher total borrowing cost.",
+      "If you are evaluating a home loan specifically, use the mortgage calculator for labels and examples that better match that intent.",
     ],
     explanation: [
       {
-        body: "The loan calculator uses the same amortization formula as the mortgage calculator, but with neutral language that works for everyday borrowing scenarios.",
-        title: "Same math, simpler wording",
+        body: "The calculator uses the same amortization formula as the mortgage calculator. It converts the annual rate into a monthly rate and calculates the fixed payment required to repay the balance over the chosen term.",
+        title: "The payment formula in simple terms",
       },
       {
-        body: "A quick monthly payment estimate is useful, but total payment and total interest make it easier to judge the real cost of borrowing.",
-        title: "How to compare offers",
+        body: "A useful loan decision needs more than one number. Monthly payment shows cash-flow impact, while total payment and total interest show whether a lower payment comes at too high a long-term cost.",
+        title: "How to compare loan offers more clearly",
       },
     ],
     intro:
-      "Estimate monthly payment, total payment, and total interest for a generic fixed-rate loan.",
+      "Use this loan calculator to estimate monthly payment, total repayment, and total interest for a fixed-rate installment loan. It is designed for common borrowing scenarios like personal loans, auto loans, or other situations where you want a quick cost check before comparing offers. The result helps with two questions at once: whether the monthly payment fits your budget and whether the total interest makes the loan worth it. That combination makes the page more useful than a payment-only estimate when you are trying to borrow with a clear view of the full cost.",
+    relatedArticleSlugs: [
+      "mortgage-vs-loan-payment-basics",
+      "how-interest-rate-changes-monthly-payment",
+      "compound-interest-basics-for-long-term-growth",
+    ],
     relatedSlugs: [
       "mortgage-calculator",
       "discount-calculator",

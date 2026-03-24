@@ -99,8 +99,10 @@ export type CalculatorContent = {
   defaultValues: CalculatorFormValues;
   examples: CalculatorExample[];
   faqs: CalculatorFaq[];
+  howToSteps?: string[];
   explanation: CalculatorExplanationSection[];
   intro: string;
+  relatedArticleSlugs?: string[];
   relatedSlugs: ImplementedCalculatorSlug[];
   slug: ImplementedCalculatorSlug;
   variantField?: string;

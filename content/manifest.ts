@@ -4,13 +4,17 @@ import type { ImplementedCalculatorSlug } from "@/types/calculator";
 import type { CategoryManifestItem, ToolManifestItem } from "@/types/site";
 
 function getToolSeoFields(slug: ImplementedCalculatorSlug) {
+  const pageContent = calculatorPageContent[slug];
+
   return {
-    faqItems: calculatorPageContent[slug].faqs,
-    intro: calculatorPageContent[slug].intro,
-    relatedCalculatorSlugs: calculatorPageContent[slug].relatedSlugs,
-    relatedArticleSlugs: BLOG_ARTICLES.filter((article) =>
-      article.relatedCalculators.includes(slug),
-    ).map((article) => article.slug),
+    faqItems: pageContent.faqs,
+    intro: pageContent.intro,
+    relatedCalculatorSlugs: pageContent.relatedSlugs,
+    relatedArticleSlugs:
+      pageContent.relatedArticleSlugs ??
+      BLOG_ARTICLES.filter((article) => article.relatedCalculators.includes(slug)).map(
+        (article) => article.slug,
+      ),
   };
 }
 
@@ -68,9 +72,9 @@ export const TOOL_MANIFEST: ToolManifestItem[] = [
     category: "health",
     shortDescription: "Estimate body mass index from height and weight inputs.",
     ...getToolSeoFields("bmi-calculator"),
-    seoTitle: "BMI Calculator for Metric and Imperial Measurements",
+    seoTitle: "BMI Calculator: Check Body Mass Index Quickly",
     seoDescription:
-      "Calculate BMI with metric or imperial inputs, review BMI categories, and understand how to use body mass index as a quick screening tool.",
+      "Check body mass index with metric or imperial inputs, review BMI categories, and understand what the result can and cannot tell you.",
   },
   {
     slug: "calorie-calculator",
@@ -79,9 +83,9 @@ export const TOOL_MANIFEST: ToolManifestItem[] = [
     shortDescription:
       "Plan a baseline calorie target for maintenance, loss, or gain scenarios.",
     ...getToolSeoFields("calorie-calculator"),
-    seoTitle: "Calorie Calculator for Maintenance, Cut, and Bulk Targets",
+    seoTitle: "Calorie Calculator: Estimate Maintenance, Cut, and Bulk Targets",
     seoDescription:
-      "Estimate maintenance calories with the Mifflin-St Jeor formula and review simple cut or bulk targets for everyday planning.",
+      "Estimate maintenance calories with the Mifflin-St Jeor formula and compare simple cut or bulk targets for everyday planning.",
   },
   {
     slug: "mortgage-calculator",
@@ -90,9 +94,9 @@ export const TOOL_MANIFEST: ToolManifestItem[] = [
     shortDescription:
       "Preview monthly mortgage costs, repayment structure, and planning context.",
     ...getToolSeoFields("mortgage-calculator"),
-    seoTitle: "Mortgage Calculator for Monthly Payment and Total Interest",
+    seoTitle: "Mortgage Calculator: Monthly Payment, Total Interest, and Cost",
     seoDescription:
-      "Calculate mortgage payments, total repayment, and total interest with a simple mortgage calculator built for first-pass planning.",
+      "Calculate mortgage payment, total repayment, and total interest so you can compare home loan scenarios with clearer cost context.",
   },
   {
     slug: "loan-calculator",
@@ -101,9 +105,9 @@ export const TOOL_MANIFEST: ToolManifestItem[] = [
     shortDescription:
       "Model installment loans with rate, term, and payment details.",
     ...getToolSeoFields("loan-calculator"),
-    seoTitle: "Loan Calculator for Monthly Payments and Repayment Cost",
+    seoTitle: "Loan Calculator: Monthly Payment and Total Borrowing Cost",
     seoDescription:
-      "Estimate loan payments, total repayment, and total interest to compare borrowing scenarios with cleaner context.",
+      "Estimate loan payment, total repayment, and total interest to compare personal or installment borrowing scenarios more clearly.",
   },
   {
     slug: "compound-interest-calculator",
@@ -134,9 +138,9 @@ export const TOOL_MANIFEST: ToolManifestItem[] = [
     shortDescription:
       "Quickly solve common percentage relationships and part-to-whole questions.",
     ...getToolSeoFields("percentage-calculator"),
-    seoTitle: "Percentage Calculator for Percent Of, What Percent, and Adjustments",
+    seoTitle: "Percentage Calculator: Percent Of, What Percent, and Adjustments",
     seoDescription:
-      "Solve common percentage questions, including percent of a number, what percent one value is of another, and simple percentage adjustments.",
+      "Solve common percentage questions, including percent of a number, what percent one value is of another, and simple percentage increases or decreases.",
   },
   {
     slug: "percent-change-calculator",
@@ -167,9 +171,9 @@ export const TOOL_MANIFEST: ToolManifestItem[] = [
     shortDescription:
       "Find exact age from a birth date using a clean, planner-style interface.",
     ...getToolSeoFields("age-calculator"),
-    seoTitle: "Age Calculator for Exact Years, Months, and Days",
+    seoTitle: "Age Calculator: Exact Years, Months, and Days",
     seoDescription:
-      "Calculate exact age from a birth date to today or a custom end date, with years, months, days, and total days.",
+      "Calculate exact age from a birth date to today or a custom end date, with years, months, days, and total-day context.",
   },
   {
     slug: "date-difference-calculator",

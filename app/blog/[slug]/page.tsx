@@ -51,10 +51,10 @@ export async function generateMetadata({
   }
 
   return buildMetadata({
-    description: article.description,
+    description: article.seoDescription,
     path: `/blog/${article.slug}`,
     publishedTime: article.publishedAt,
-    title: article.title,
+    title: article.seoTitle,
     type: "article",
   });
 }
