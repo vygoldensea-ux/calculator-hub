@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/goldenseatool",
+      "destination": "https://goldensea-tool.vercel.app/goldenseatool"
+    },
+    {
+      "source": "/goldenseatool/:path*",
+      "destination": "https://goldensea-tool.vercel.app/goldenseatool/:path*"
+    }
+  ]
+}
